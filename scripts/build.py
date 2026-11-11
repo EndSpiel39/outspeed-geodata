@@ -9,7 +9,7 @@ import re
 import sys
 
 CATEGORY = "OUTSPEED-DIRECT"
-PATTERN = re.compile(r"(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*$")
+PATTERN = re.compile(r"(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*$")
 
 
 def varint(value: int) -> bytes:
