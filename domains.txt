@@ -2,3 +2,4 @@
 # domain:example.com = домен + любые поддомены
 # full:host.example.com = только точный хост
 domain:animeozi.space
+full:oauth.yandex.com
