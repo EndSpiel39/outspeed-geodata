@@ -1,0 +1,4 @@
+# OutSpeed VPN — домены для DIRECT
+# domain:example.com = домен + любые поддомены
+# full:host.example.com = только точный хост
+domain:animeozi.space
