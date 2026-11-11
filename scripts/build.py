@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import sys
 
-CATEGORY = "OUTSPEED-DIRECT"
+CATEGORY = "outspeed-direct"
 PATTERN = re.compile(r"(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*$")
 
 
