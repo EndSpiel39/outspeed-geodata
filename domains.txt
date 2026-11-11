@@ -25,3 +25,10 @@ domain:yandex.cloud
 domain:yandexgo.com
 domain:meteum.ai
 domain:shedevrum.ai
+
+# MAX messenger core, backend, and call/media endpoints
+domain:max.ru
+domain:oneme.ru
+domain:cdn-max.ru
+full:calls.okcdn.ru
+full:videowebrtc.okcdn.ru
