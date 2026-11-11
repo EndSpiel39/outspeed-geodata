@@ -1,0 +1,37 @@
+name: Build OutSpeed GeoData
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - domains.txt
+      - scripts/build.py
+      - .github/workflows/build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: outspeed-geodata-release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build geosite asset
+        run: python scripts/build.py
+      - name: Publish latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view latest >/dev/null 2>&1; then
+            gh release upload latest dist/outspeed.dat --clobber
+          else
+            gh release create latest dist/outspeed.dat --title "OutSpeed GeoData" --notes "Auto-built OutSpeed DIRECT domain rules"
+          fi
