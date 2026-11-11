@@ -38,7 +38,12 @@ def load_domains(path: Path):
         if ":" not in line:
             raise ValueError(f"Line {line_no}: expected domain: or full: prefix")
         kind, value = line.split(":", 1)
-        if kind not in ("domain", "full") or not PATTERN.fullmatch(value):
+        if kind == "regexp":
+            try:
+                re.compile(value)
+            except re.error as exc:
+                raise ValueError(f"Line {line_no}: invalid regex {value!r}: {exc}") from exc
+        elif kind not in ("domain", "full") or not PATTERN.fullmatch(value):
             raise ValueError(f"Line {line_no}: invalid domain entry {line!r}")
         entries.add((kind, value))
     if not entries:
@@ -50,7 +55,7 @@ def build(entries):
     # Domain.Type: RootDomain=2 (domain and all subdomains), Full=3.
     site = field_bytes(1, CATEGORY.encode("ascii"))
     for kind, name in entries:
-        domain = field_int(1, 2 if kind == "domain" else 3)
+        domain = field_int(1, {"domain": 2, "full": 3, "regexp": 1}[kind])
         domain += field_bytes(2, name.encode("ascii"))
         site += field_bytes(2, domain)
     # GeoSiteList.entry = field 1.
