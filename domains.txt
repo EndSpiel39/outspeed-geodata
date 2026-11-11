@@ -32,3 +32,11 @@ domain:oneme.ru
 domain:cdn-max.ru
 full:calls.okcdn.ru
 full:videowebrtc.okcdn.ru
+
+# MAX documented voice/video infrastructure (specific hosts and hostname patterns)
+regexp:^videostun[0-9a-z-]*\.okcdn\.ru$
+regexp:^call[0-9a-z-]*-[0-9a-z-]+\.vkuser\.net$
+# Sferum integration hosted within MAX
+full:frontend.sferum-dev.ru
+full:platform-api.sferum-dev.ru
+domain:sferum-platform.ru
