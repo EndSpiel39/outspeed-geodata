@@ -1,5 +1,27 @@
-# OutSpeed VPN — домены для DIRECT
-# domain:example.com = домен + любые поддомены
-# full:host.example.com = только точный хост
+# OutSpeed VPN — domains routed DIRECT
+# domain:example.com = example.com and ALL subdomains (including future ones)
+# full:example.com = only the exact hostname
+
 domain:animeozi.space
-full:oauth.yandex.com
+
+# Yandex: primary domains and commonly used auxiliary domains
+# Independent of geosite:yandex from Loyalsoldier
+domain:yandex.com
+domain:yandex.ru
+domain:yandex.net
+domain:yandex.com.ru
+domain:yandex.by
+domain:yandex.kz
+domain:yandex.com.tr
+domain:ya.ru
+domain:ya.cc
+domain:clck.ru
+domain:yastatic.net
+domain:yastat.net
+domain:yandex.st
+domain:yndx.net
+domain:yandexcloud.net
+domain:yandex.cloud
+domain:yandexgo.com
+domain:meteum.ai
+domain:shedevrum.ai
