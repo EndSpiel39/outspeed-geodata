@@ -40,3 +40,6 @@ regexp:^call[0-9a-z-]*-[0-9a-z-]+\.vkuser\.net$
 full:frontend.sferum-dev.ru
 full:platform-api.sferum-dev.ru
 domain:sferum-platform.ru
+
+# NordVPN website: root domain and all subdomains
+domain:nordvpn.com
